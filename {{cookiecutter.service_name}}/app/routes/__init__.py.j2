@@ -1,6 +1,6 @@
 from flask import Blueprint
 {% for endpoint in cookiecutter.endpoints %}
-from . import {{endpoint.name}}_routes
+from . import {{endpoints.name}}_routes
 {% endfor %}
 
 def register_routes(app):
