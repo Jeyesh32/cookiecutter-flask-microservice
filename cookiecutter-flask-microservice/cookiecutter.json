@@ -1,0 +1,22 @@
+{
+  "service_name": "my_service",
+  "service_description": "A Flask microservice",
+  "service_port": "5000",
+  "include_logging": ["y", "n"],
+  "log_level": ["DEBUG", "INFO", "WARNING", "ERROR"],
+  "database": ["none", "postgresql", "mongodb", "mysql"],
+  "include_redis": ["y", "n"],
+  "endpoints": [
+    {
+      "name": "healthcheck",
+      "path": "/health",
+      "method": "GET"
+    },
+    {
+      "name": "create_item",
+      "path": "/items",
+      "method": "POST"
+    }
+  ],
+  "_extensions": ["jinja2_time.TimeExtension"]
+}

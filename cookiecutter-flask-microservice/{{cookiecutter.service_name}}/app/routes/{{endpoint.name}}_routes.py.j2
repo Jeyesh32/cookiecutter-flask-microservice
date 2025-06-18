@@ -1,0 +1,8 @@
+# {{cookiecutter.service_name}}/app/routes/{{endpoint.name}}_routes.py.j2
+from flask import Blueprint, jsonify
+
+bp = Blueprint('{{endpoint.name}}', __name__)
+
+@bp.route('{{endpoint.path}}', methods=['{{endpoint.method}}'])
+def {{endpoint.name}}():
+    return jsonify({"status": "success"})

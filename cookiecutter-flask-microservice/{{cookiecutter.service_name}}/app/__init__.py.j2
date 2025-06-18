@@ -1,0 +1,20 @@
+from flask import Flask
+
+{ % if cookiecutter.include_logging == "y" %}
+from .logging import configure_logging
+
+{ % endif %}
+
+def create_app():
+    app = Flask(__name__)
+
+    # Configuration
+    app.config['SERVICE_NAME'] = "{{cookiecutter.service_name}}"
+    app.config['PORT'] = {{cookiecutter.service_port}}
+
+    { % if cookiecutter.include_logging == "y" %}
+    # Configure logging
+    configure_logging(app)
+    { % endif %}
+
+    return app
